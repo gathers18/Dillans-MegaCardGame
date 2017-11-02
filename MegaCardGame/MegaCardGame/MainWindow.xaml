@@ -1,0 +1,48 @@
+﻿<Page x:Class="MegaCardGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MegaCardGame"
+        mc:Ignorable="d"
+        Title="Selection Screen" Height="600" Width="900" Background="WhiteSmoke">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="158*"/>
+                <ColumnDefinition Width="289*"/>
+            </Grid.ColumnDefinitions>
+            <Label Name="CharSelectLabel" Content="Character Select" FontSize="50" Grid.Column="1" HorizontalAlignment="Left" Margin="42,75,0,0" VerticalAlignment="Top" Height="103" Width="476"/>
+            <Image Name="ClassImage" HorizontalAlignment="Left" Height="265" Margin="10,10,0,0" VerticalAlignment="Top" Width="296"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="199*"/>
+                <ColumnDefinition Width="99*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.ColumnSpan="2" Margin="462,0,-0.4,-0.4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="7*"/>
+                </Grid.RowDefinitions>
+                <Button Name="SelectButton"  Content="Select" TextElement.Foreground="White" Background="Black" TextElement.FontSize="35" HorizontalAlignment="Left" Margin="152,10,0,0" VerticalAlignment="Top" Width="270" Height="90" Click="SelectButton_Click"/>
+                <TextBlock  Name="DetailsTextBlock" Background="White" HorizontalAlignment="Left" Height="167" Margin="152,5,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="270">
+                    <Label Name="DetailsLabel"></Label>
+                </TextBlock>
+            </Grid>
+            <ListBox Name="ClassListBox" BorderBrush="Black" BorderThickness="2" Background="White" HorizontalAlignment="Left" Height="217" Margin="10,59,0,0" VerticalAlignment="Top" Width="576" SelectionChanged="ClassListBox_SelectionChanged">
+                <ListBoxItem>Warrior</ListBoxItem>
+                <ListBoxItem>Mage</ListBoxItem>
+                <ListBoxItem>Thief</ListBoxItem>
+            </ListBox>
+            <Label Name="ClassTitle" Content="Class" BorderBrush="Black" BorderThickness="2" FontSize="25" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="576" Height="49"/>
+        </Grid>
+
+    </Grid>
+</Page>
